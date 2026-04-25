@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Linea Supply | Original Streetwear</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header>
+    <img src="lineaLogotipoBranco.png" alt="Linea Supply">
+    <a href="#contato" class="btn">Comprar Agora</a>
+  </header>
+
+  <section class="hero">
+    <div class="hero-content">
+      <h1>ESTILO QUE IMPACTA</h1>
+      <p>Streetwear premium com identidade única. Seja Linea.</p>
+      <a href="#produtos" class="btn">Ver Coleção</a>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>POR QUE ESCOLHER A LINEA?</h2>
+    <div class="cards">
+      <div class="card">
+        <h3>Alta Qualidade</h3>
+        <p>Materiais premium que não desbotam e não racham.</p>
+      </div>
+      <div class="card">
+        <h3>Design Exclusivo</h3>
+        <p>Estilo único inspirado no streetwear moderno.</p>
+      </div>
+      <div class="card">
+        <h3>Conforto Total</h3>
+        <p>Peças feitas pra usar o dia inteiro.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section products" id="produtos">
+    <h2>NOSSOS PRODUTOS</h2>
+    <div class="cards">
+      
+      <div class="card">
+        <div class="slider" data-images="camiseta1.jpeg,camiseta2.jpeg,camiseta3.jpeg,camiseta4.jpeg"></div>
+        <h3>Nossas Camisetas</h3>
+        <p>A partir de R$ 99,90</p>
+      </div>
+
+      <div class="card">
+        <div class="slider" data-images="tenis1.jpeg,tenis2.jpeg,tenis3.jpeg,tenis4.jpeg"></div>
+        <h3>Nossos Tênis</h3>
+        <p>A partir de R$ 89,90</p>
+      </div>
+
+      <div class="card">
+        <div class="slider" data-images="acessorio1.jpeg,acessorio2.jpeg,acessorio3.jpeg,acessorio4.jpeg"></div>
+        <h3>Nossos Acessórios</h3>
+        <p>A partir de R$ 29,90</p>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="cta" id="contato">
+    <h2>GARANTA JÁ A SUA PEÇA</h2>
+    <p>Selecione alguma das opções abaixo</p>
+    <br>
+    <a href="https://wa.me/5567981671706" class="btn">Falar no WhatsApp</a>
+    <a href="https://maps.app.goo.gl/XpvEBV6BE1hmCGKh8" class="btn">Nossa Localização</a>
+  </section>
+
+  <footer>
+    <p>© 2026 Linea Supply - Todos os direitos reservados</p>
+  </footer>
+
+  <script>
+    document.querySelectorAll('.slider').forEach(slider => {
+      const images = slider.getAttribute('data-images').split(',');
+      let currentIdx = 0;
+      
+      // Define a primeira imagem
+      slider.style.backgroundImage = `url(${images[0]})`;
+
+      setInterval(() => {
+        currentIdx = (currentIdx + 1) % images.length;
+        slider.style.backgroundImage = `url(${images[currentIdx]})`;
+      }, 3000); // Troca a cada 3 segundos
+    });
+  </script>
+
+</body>
+</html>
